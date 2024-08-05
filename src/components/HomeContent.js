@@ -11,6 +11,7 @@ function HomeContent() {
     const [dataImage , setDataImage] = useState(imageData);
     localStorage.setItem("dataimage",JSON.stringify(dataImage));
     const [userProfile, setUserProfile] = useState({
+        profilePic: "",
         name: "",
         email: "",
         password: "",
@@ -60,12 +61,12 @@ if(userProfile.role === "Admin User"){
         <>
             <div className="grid-box">
                 <div className="gridbox-item1">
-                    <h1 className="homepage">B.planet</h1>
+                    <Link to="/home" ><button className="homepage" style={{border:"none", backgroundColor:"inherit" ,fontSize:"32px",cursor:"pointer",fontWeight:"bolder"}}>B.planet</button></Link>
                 </div>
 
                 <div className="gridbox-item2">
                     <Link to="/contact" className="contact" style = {{marginTop : "40px"}}>Contact us</Link>
-                    <Link to="/profile" ><img src={userProfile.profilePic} className="profile" alt="Profile"  /></Link>
+                    <Link to="/login" ><button style={{border:"none", backgroundColor:"inherit" ,fontSize:"17px",cursor:"pointer"}}>Login</button></Link>
                     <br /><br /><br />
                 </div>
                 <br />
@@ -107,7 +108,7 @@ else
         <>
             <div className="grid-box">
                 <div className="gridbox-item1">
-                    <h1 className="homepage">B.planet</h1>
+                <Link to="/home" ><button className="homepage" style={{border:"none", backgroundColor:"inherit" ,fontSize:"32px",cursor:"pointer",fontWeight:"bolder"}}>B.planet</button></Link>
                 </div>
 
                 <div className="gridbox-item2">
